@@ -4,23 +4,19 @@ import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+const Home = (props) => {
+    return (<div className="bigCounter mx-auto">
+        <div className="calandar" >
+            <i className="fa-regular fa-clock fa"></i>
+        </div>
+		<div className="sixthDigit">{Math.floor(props.seconds /1000000) %10}</div>
+		<div className="fifthDigit">{Math.floor(props.seconds /100000) %10}</div>
+        <div className="fourthDigit">{Math.floor(props.seconds /10000) %10}</div>
+        <div className="thirdDigit">{Math.floor(props.seconds /1000) %10}</div>
+        <div className="secondDigit">{Math.floor(props.seconds /100) %10}</div>
+        <div className="firstDigit">{Math.floor(props.seconds /10) %10}</div>
+    </div>);
+
 };
 
 export default Home;
